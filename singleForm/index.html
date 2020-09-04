@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <tiles:insertAttribute name="meta" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="format-detection" content="telephone=no" />
+    <title>Naveen Single Form</title>
+    <tiles:insertAttribute name="favicon"/>
+    <link type="text/css" rel="stylesheet" href="css/singleForm.css" />
+</head>
+<body class="en" style="background-color:#fff; ">
+    <div id="logistics_Uniquote_Create">
+        <!--New GetQuote Design START-->
+        <div class="new_logistics_body_form en_font">
+            <div class="form_process">
+                <h3 class="head">Single Form</h3>
+            </div>
+            <div class="new_logistics_box" id="new_logistics_Check">
+                <div class="logistics_box_left">
+                    <div class="css_Align">
+                        <div class="new_TransMode">
+                            <p class="label en_fontM new_br_btm">Transport Mode<span class="req">*</span><span class="int">(Multiple)</span><span class="warning newwarningTrans">Please select at least one shipping method</span></p>
+                            <div class="new_trans_icons" id="new_TransIcon" data-value="">
+                                <div class="trans_sort trans_check" data-value="1">
+                                    <img class="not_active" src="img/courier.svg" alt="">
+                                    <img class="active" src="img/courierA.svg" alt="">
+                                </div>
+                                <div class="trans_sort trans_check" data-value="2">
+                                    <img class="not_active" src="img/air.svg" alt="">
+                                    <img class="active" src="img/airA.svg" alt="">
+                                </div>
+                                <div class="trans_sort trans_check" data-value="3">
+                                    <img class="not_active" src="img/sea.svg" alt="">
+                                    <img class="active" src="img/seaA.svg" alt="">
+                                </div>
+                                <div class="trans_sort" data-value="4">
+                                    <img class="not_active" src="img/land.svg" alt="">
+                                    <img class="active" src="img/landA.svg" alt="">
+                                </div>
+                                <div class="trans_sort" data-value="5">
+                                    <img class="not_active" src="img/others.svg" alt="">
+                                    <img class="active" src="img/othersA.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="new_Sp_Cs_Info new_js_val">
+                            <p class="label new_br_btm en_fontM">Shipper / Consignee Information<span class="req">*</span></p>
+                            <!-- <span class="warning newwarningMessage">Required Field</span> -->
+
+                            <div class="new_info_row new_shippers_Infor en_fontM">
+                                <div class="f1_div blue">
+                                    From
+                                </div>
+                                <div class="f2_div">
+                                    <input type="text" name="spCountry" maxlength="100" value="" id="new_spCountry"  class="form_input inputValideCSS" placeholder="Country">  
+                                </div>
+                                <div class="slash">/</div>
+                                <div class="f3_div">
+                                    <input type="text" name="spCity" maxlength="100" value="" id="new_spCity"  class="form_input inputValideCSS" placeholder="City / Port / Airport">
+                                </div>
+                            </div>
+                            <div class="new_info_row new_consignee_Infor en_fontM mt-16">
+                                <div class="f1_div white">
+                                    To
+                                </div>
+                                <div class="f2_div">
+                                    <input type="text" name="csCountry" maxlength="100" value="" id="new_csCountry"  class="form_input inputValideCSS" placeholder="Country">  
+                                </div>
+                                <div class="slash">/</div>
+                                <div class="f3_div">
+                                    <input type="text" name="csCity" maxlength="100" value="" id="new_csCity"  class="form_input inputValideCSS" placeholder="City / Port / Airport">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="new_Contact_Info">
+                            <p class="label new_br_btm en_fontM">Contact Information</p>
+                            <div class="new_email_row new_js_val">
+                                <div class="labelInfo">
+                                    <p class="label pt-0">Email<span class="req ad_top">*</span></p>
+                                </div>
+                                <div class="inputInfo">
+                                    <input type="text" name="adEmail" id="new_adEmail" value="" maxlength="100" class="form_input inputValideCSS emailRequired3" placeholder="">
+                                </div>
+                                <div class="div_warning">
+                                    <p class="warning">Required</p>
+                                    <p class="formatWrong">Email Format is Wrong</p>
+                                </div>
+                            </div>
+                            <div class="new_remark_row">
+                                <div class="labelInfo">
+                                    <p class="label pt-0">Remark</p>
+                                </div>
+                                <div class="textInfo">
+                                    <textarea name="adRemarks" id="new_adRemarks" class="textArea_info messageRequired inputBorderVal inputValideCSS" placeholder="" cols="30" rows="5" maxlength="1000"></textarea>
+                                    <p id="new_the-count"><span id="new_chars2">1000</span><span>/1000</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="logistics_box_right">
+                    <div class="css_Align">
+                        <div class="new_CargoMode en_fontM">
+                            <p class="label new_br_btm">Cargo Information</p>
+                            <div class="new_weight_row">
+                                <div class="labelInfo">
+                                    <p class="label pt-0">Total Gross Weight<span class="req ad_top">*</span></p>
+                                </div>
+                                <div class="weightInfo new_js_val">
+                                    <div class="btn" id="newsubs"><img src="img/subs.png" alt=""></div>
+                                    <input type="text" class="input_weight inputDim inputValideCSS inputNumber inputWeight_dis" id="new_inputWeight" placeholder="0" value="" maxlength="8" name="weightvalue" />
+                                    <div class="btn" id="newadds"><img src="img/adds.png" alt=""></div>
+                                    <p class="kgs">kg</p>
+                                </div>
+                            </div>
+                            <div class="new_dimension_row">
+                                <p class="label">Dimension</p>
+                                <div class="infoDimension_row">
+                                    <input type="text" class="input_L inputDim inputNumber1 inputValideCSS" id="mb_dimensionL" maxlength="8" name="dimvalue" placeholder="Length" />
+                                    <p class="cm">cm</p>
+                                    <input type="text" class="input_W inputDim inputNumber2 inputValideCSS" id="mb_dimensionW" maxlength="8" name="dimvalue" placeholder="Width" />
+                                    <p class="cm">cm</p>
+                                </div>
+                                <div class="infoDimension_row just_start">
+                                    <input type="text" class="input_H inputDim inputNumber3 inputValideCSS" id="mb_dimensionH" maxlength="8" name="dimvalue" placeholder="Height" />
+                                    <p class="cm">cm</p>
+                                </div>
+                            </div>
+                            <div class="new_productDiscription_row">
+                                <p class="label">Product Name / Description</p>
+                                <div class="new_textPoduct">
+                                    <textarea name="message" class="new_product_dis inputValideCSS messageRequired" id="new_prod_dis" placeholder="" cols="30" rows="5" maxlength="1000"></textarea>
+                                    <p id="new_prodCount"><span id="new_chars3">1000</span><span>/1000</span></p>
+                                </div>
+                            </div>
+                            <!-- <div class="new_uploadImages_row">
+                                <dl id="upLoadFile" style="position: relative;">
+                                    <dt class="dt_css">
+                                        <div id="uploadFa1" class="uploadFa1Css">
+                                            <input type="file" class="entaddsm btnUpload" name="file_upload" id="file_upload" />
+                                        </div>
+                                        <div class="new_posicons">
+                                            <span class="text">
+                                            Upload Image/Files(<span id="fileCount">0</span>/3)
+                                            </span>
+                                            <span class="icon_help">
+                                                <img src="img/icon_info.png" alt="">
+                                                <div class="prompt_display">
+                                                    <p class="file_format">RAR,ZIP.DOC.DOCX.PDF.JPG.JPEG and PNG is acceptable.Each is limited to <span style="color: #2296f3;">10MB</span></p>
+                                                </div>
+                                            </span>
+                                        </div>
+                                    </dt>
+                                    <dd style="padding: 0px 0px;position: relative;" class="entbasesed docAttach">
+                                        <div id="fileType">
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="new_getQuoteButton en_fontM">
+                <div class="btn_new_blue" data-state="false" id="new_getQuoteSend">Get A Quote</div>
+            </div>
+        </div>
+
+        <div class="new_ConfirmPopUp en_font" id="new_ConfirmPopUp">
+            <div class="new_ConfirmCSS">
+                <div class="head">
+                    <h2>PROMPT</h2>
+                    <p class="newclosePng" id="newclosePng">
+                        <img src="img/close.png" alt="">
+                    </p>
+                </div>
+                <div class="body">
+                    <p>Confirm to submit?</p>
+                </div>
+                <div class="bottom">
+                    <div class="left" id="notSubmit">
+                        <p>No</p>
+                    </div>
+                    <div class="right" id="yesSubmit" onclick="newSubmitConfirmRequest()">
+                        <p>Yes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="confirm_popUp-box en_font" id="confirmPopup">
+            <div class="divCss">
+                <div class="head">
+                    <h1><span>Tip</span></h1>
+                </div>
+                <div class="body">
+                    <div class="succ"><img class="tick" src="img/success.png" /><h3>RFQ has been successfully sent!</h3></div>
+                    <p class="para1">Thank you very much for your RFQ, and ChaFreight will<br/>provide you with a quotation.</p>
+                    <p class="para2">Check the results by email or enquiry number</p>
+                    <p class="para3">How to view the quotes?</p>
+                    <div class="method">
+                        <h3><span class="sp1">Method 1</span><span class="sp2"> After the quotation from the supplier is made, the quotation will be<br/> 
+                            sent to your email address [<span id="new_adEmail_Dis2"></span>] for confirmation.</span></h3>
+                        <h3><span class="sp1">Method 2</span><span class="sp2"> You can enter your email address on the logistics home page.</span></h3>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="close_btn" id="closeToTransferList">VIEW RFQ LIST</div>
+                </div>
+            </div>
+        </div>
+        <!--New GetQuote Design END-->
+
+    </div>
+
+
+
+    <!--Mobile Development-->
+
+    <div id="logistics_Uniquote_Create_Mobile" class="logistics_mobile">
+
+        <div class="mb_sendQuote_form disBlock en_font">
+            <div class="mb_nav">
+                <div class="goback" id="home_back"><a href="/logistics/rfq/home"><img src="img/back.png" alt="" /></a></div>
+                <div class="mid"><h4>Get A Quote</h4></div>
+                <div class="send"></div>
+            </div>
+
+            <div class="mb_info">
+                <div class="mb_sp_cs_info">
+                    <div class="left">
+                        <div class="from">From</div>
+                        <div class="dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="to">To</div>
+                    </div>
+                    <div class="right">
+                        <div class="sp_address enter_location">
+                            <div class="input_none " id="sp_disNone">
+                                <h4 class="text">Shipper Information<span class="req">*</span></h4>
+                                <p class="m_info">Please enter the country and city/port/airport</p>
+                            </div>
+                            <div class="input_none" id="sp_disOn">
+                                <p class="info_sp_dis">
+                                    <span id="info_sp_Co_dis"></span>
+                                    <span id="info_sp_Ci_dis"></span>
+                                </p>
+                            </div>
+                            <!-- <div class="icon_loc" id="enter_location"  onclick="showPosition()">
+                                <img src="img/location.png" alt="">
+                            </div> -->
+                        </div>
+                        <div class="cs_address enter_location">
+                            <div class="input_none"  id="cs_disNone">
+                                <h4 class="text">Consignee Information<span class="req">*</span></h4>
+                                <p class="m_info">Please enter the country and city/port/airport</p>
+                            </div>
+                            <div class="input_none" id="cs_disOn">
+                                <p class="info_sp_dis">
+                                    <span id="info_cs_Co_dis"></span>
+                                    <span id="info_cs_Ci_dis"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb_goods_info">
+                    <h5>Cargo <span class="req">*</span></h5>
+                    <p id="enter_goods" class="enterGoods">Edit</p>
+                    <p id="goods_dis" class="enterGoods"><span id="goods_dis_show"></span><span>kg</span></p>
+                </div>
+
+                <div class="mb_transMode">
+                    <p class="para">Transport Mode<span class="req">*</span><span class="warningTrans">Please select at least one</span></p>
+                    <div class="mb_trans_icons" id="mb_TransIcon" data-value="">
+                        <div class="trans_sort trans_check" data-value="1">
+                            <img class="not_active" src="img/courier.svg" alt="">
+                            <img class="active" src="img/courierA.svg" alt="">
+                        </div>
+                        <div class="trans_sort trans_check" data-value="2">
+                            <img class="not_active" src="img/air.svg" alt="">
+                            <img class="active" src="img/airA.svg" alt="">
+                        </div>
+                        <div class="trans_sort trans_check" data-value="3">
+                            <img class="not_active" src="img/sea.svg" alt="">
+                            <img class="active" src="img/seaA.svg" alt="">
+                        </div>
+                        <div class="trans_sort" data-value="4">
+                            <img class="not_active" src="img/land.svg" alt="">
+                            <img class="active" src="img/landA.svg" alt="">
+                        </div>
+                        <div class="trans_sort" data-value="5">
+                            <img class="not_active" src="img/others.svg" alt="">
+                            <img class="active" src="img/othersA.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb_btn_div">
+                    <div class="btn_get mb_btn_css" data-state="false" id="mb_btn_Get">Get A Quote</div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mb_locationEditing en_font">
+            <div class="mb_nav">
+                <div class="goback" id="info_backOne"><img src="img/back.png" alt="" /></div>
+                <div class="mid"><h4>Information Editing</h4></div>
+                <div class="send"></div>
+            </div>
+
+            <div class="mb_loc_info">
+                <div class="mb_spInfo">
+                    <div class="left">
+                        <p class="text">Shipper<br/>Information</p>
+                        <p class="req">Required</p>
+                    </div>
+                    <div class="right mb_js_val">
+                        <input type="text" name="mb_spCountry" maxlength="100" value="" id="mb_spCountry" class="mb_forminput inputValide" placeholder="Country">
+                        <input type="text" name="mb_spCity" maxlength="100" value="" id="mb_spCity"  class="mb_forminput inputValide mt-12" placeholder="City / Port / Airport">
+                    </div>
+                </div>
+
+                <div class="mb_csInfo">
+                    <div class="left">
+                        <p class="text">Consignee<br/>Information</p>
+                        <p class="req">Required</p>
+                    </div>
+                    <div class="right mb_js_val">
+                        <input type="text" name="mb_csCountry" maxlength="100" value="" id="mb_csCountry"  class="mb_forminput inputValide" placeholder="Country">
+                        <input type="text" name="mb_csCity" maxlength="100" value="" id="mb_csCity"  class="mb_forminput inputValide mt-12" placeholder="City / Port / Airport">
+                    </div>
+                </div>
+
+
+                <div class="mb_btn_btm">
+                    <div class="btn_saveOne mb_btn_css" data-state="false" id="mb_btn_saveOne">Save</div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="mb_goodsEditing en_font">
+            <div class="mb_nav">
+                <div class="goback" id="info_backTwo"><img src="img/back.png" alt="" /></div>
+                <div class="mid"><h4>Cargo</h4></div>
+                <div class="send"></div>
+            </div>
+
+            <div class="mb_goods_infoDiv">
+                <div class="mb_weight">
+                    <div class="mb_weightTop">
+                        <div class="left">
+                            <p>Total Gross Weight</p>
+                            <p class="req">Required</p>
+                        </div>
+                        <div class="right mb_js_val2">
+                            <div class="mb_inputWeightDiv">
+                                <div class="btn" id="subs"><img src="img/subs.png" alt=""></div>
+                                <input type="text" class="input_weight inputDim inputValide inputNumber inputWeight_dis" id="mb_inputWeight" placeholder="0" value="" maxlength="8" name="weightvalue" />
+                                <div class="btn" id="adds"><img src="img/adds.png" alt=""></div>
+                                <p class="kgs">kg</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb_dimension">
+                        <div class="head">
+                            <h4>Dimension</h4>
+                        </div>
+                        <div class="bottom">
+                            <input type="text" class="input_L inputDim inputNumber1" id="mb_dimensionL" maxlength="8" name="dimvalue" placeholder="Length" />
+                            <p class="m">cm</p>
+                            <input type="text" class="input_W inputDim inputNumber2" id="mb_dimensionW" maxlength="8" name="dimvalue" placeholder="Width" />
+                            <p class="m">cm</p>
+                            <input type="text" class="input_H inputDim inputNumber3" id="mb_dimensionH" maxlength="8" name="dimvalue" placeholder="Height" />
+                            <p class="m">cm</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb_product_dis">
+                    <h4 class="head">Product Name</h4>
+                    <textarea name="message" class="product_dis" id="prod_dis" placeholder="" cols="30" rows="5" maxlength="1000"></textarea>
+                </div>
+
+                <!-- <div class="mb_mobile_Uploads">
+                    <dl id="upLoadFile2" class="fileUploadDisplay">
+                        <dd style="padding: 0px;" class="entbasesed docAttach">
+                            <div id="fileType2" class="mb_uploadShow">
+                            </div>
+                        </dd>
+                        <dt class="">
+                            <div id="uploadFa2">
+                                <input type="file" class="entaddsm btnUpload2" name="file_uploadMobile"
+                                    id="file_uploadMobile" />
+                                <span class="btnHide"></span>
+                            </div>
+                        </dt>
+                    </dl>
+                    <span class="text countColor">Upload Image/Files(<span id="fileCount2">0</span>/3)</span>
+                </div>
+                <p class="file_format">RAR, ZIP, DOC, DOCX, PDF, JPG, JPEG and PNG is acceptable.Each is limited to 10MB.</p> -->
+
+
+                <div class="mb_btn_btmOne">
+                    <div class="btn_saveTwo mb_btn_css" data-state="false" id="mb_btn_saveTwo">Save</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="logistics_dialogue en_font" id="logistics_dialogue_box">
+            <div class="logistics_dialogue_body">
+                <div class="head">
+                    <h3>contact information</h3><p id="close_mb_pop"><img src="img/remove.png" /></p>
+                </div>
+
+                <div class="body">
+                    <p class="label">Email<span class="req">*</span><span class="warningMailbox">Mailbox Format Error</span></p>
+                    <input type="text" name="mb_adEmail" id="mb_adEmail" value="" maxlength="100" class="mb_form_input inputValide mb_emailReq" placeholder="">
+                    <p class="label">Remark</p>
+                    <textarea name="adRemarks" id="mb_adRemarks" class="mb_textArea_info messageRequired inputBorderVal" placeholder="" cols="30" rows="5" maxlength="1000"></textarea>
+                    <div class="btn_get mb_btn_css" data-state="false" id="mb_btn_Send" onclick="submitMobileConfirmRequistion()">Get A Quote</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb_logistics_success en_font" id="mb_logistics_success">
+            <div class="mb_nav">
+                <div class="goback"></div>
+                <div class="mid"><h4>Tip</h4></div>
+                <div class="send"></div>
+            </div>
+            <div class="mb_success_infoDiv">
+                <img src="img/success.svg" alt="">
+                <h4 class="heading">RFQ has been successfully sent!</h4>
+                <p class="para1">Thank you very much for your RFQ, and ChaFreight will
+                    provide you with a quotation.</p>
+                <p class="para2">Check the results by email</p>
+
+                <p class="para3">How to view the quotes?</p>
+                <p class="para4">
+                    <span class="methodPlace">Method</span><br/>The quotation will be sent to your email address [<span id="mb_adEmail_Dis2"></span>] for confirmation</p>
+
+                <a href="/logistics/rfq/home" class="mb_backtoHome">Back To Home</a>
+            </div>
+        </div>
+
+        <div class="mb_locationEditPop en_font" id="mb_locationEditPop">
+            <div class="mb_locEditPopCSS">
+                <div class="head">
+                    <p>This page has been edited <br/>whether to exit</p>
+                </div>
+                <div class="bottom">
+                    <div class="left" id="stayInLocation">
+                        <p>No</p>
+                    </div>
+                    <div class="right" id="exitLocation">
+                        <p>Yes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb_goodsEditPop en_font" id="mb_goodsEditPop">
+            <div class="mb_locEditPopCSS">
+                <div class="head">
+                    <p>This page has been edited <br/>whether to exit</p>
+                </div>
+                <div class="bottom">
+                    <div class="left" id="stayInGoods">
+                        <p>No</p>
+                    </div>
+                    <div class="right" id="exitGoods">
+                        <p>Yes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="mb_getQuotePopFields en_font" id="mb_getQuotePopFields">
+            <div class="mb_getQuotePopFieldsCSS">
+                <p>Please complete all required fields！</p>
+            </div>
+        </div> -->
+
+    </div>
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/singleForm.js"></script>
+</body>
+</html>
